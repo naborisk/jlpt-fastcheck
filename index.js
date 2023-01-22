@@ -18,7 +18,11 @@ const {firefox} = require('playwright')
   await page.waitForSelector('#globalNavi > li:nth-child(5) > a:nth-child(1)')
   await page.$eval('#globalNavi > li:nth-child(5) > a:nth-child(1)', el => el.click())
 
-  //await page.waitForSelector('table.verticalTable:nth-child(3) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(6) > a:nth-child(1)')
-  //await page.$eval('table.verticalTable:nth-child(3) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(6) > a:nth-child(1)', el => el.click())
+  await page.waitForSelector('table.verticalTable:nth-child(3) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(6) > a:nth-child(1)')
+  await page.$eval('table.verticalTable:nth-child(3) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(6) > a:nth-child(1)', el => el.click())
 
+  await page.waitForSelector('table.borderTable:nth-child(4)')
+  console.log(await page.content())
+
+  await browser.close()
 })()
